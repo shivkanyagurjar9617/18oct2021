@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+    </head>
+    <body>
+        <h1>Area of Circul</h1>
+        <form> 
+            <input type="number" id="radius" placeholder="Enter the value of radius" onkeyup="calculate()">
+            <button type="submit">Submit</button>
+        </form>
+        <form>
+            <input type="number" id="radius2" placeholder="Enter the value of radius" onkeyup="calculate2(event)">
+            <button type="submit">Submit</button>
+        </form>
+        <form onsubmit="return calculate3()">
+            <input type="number" data-id="radius3" placeholder="Enter the value of radius">
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            //1.Function defination
+            function calculate(){
+                //How you can access a dom element
+                var r = document.getElementById('radius').value;
+                //Testing
+                //alert(r);
+                console.log('Area of Circul is',3.14*r*r);
+            }
+            function calculate2(event){
+                //How you can access a dom element?
+                //var r = document.getElementById('radius').value;
+                var r = event.target.value;
+                //Testing
+                //alert(r);
+                console.log('Area of Circul is',3.14*r*r);
+
+            }
+            function calculate3(){
+                var r = document.querySelector('[data-id="radius3"]').value;
+                console.log('Area of Circul is',3.14*r*r);
+                //Function may return something
+                return false;
+            }
+
+        </script>
+        
+    </body>
+</html>
